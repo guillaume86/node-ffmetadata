@@ -157,6 +157,11 @@ function getWriteArgs(src, dst, data, options) {
 		args.push("-id3v2_version", "3");
 	}
 
+	// strip existing metadata
+	if (options.strip) {
+		args.push("-map_metadata", "-1");
+	}
+
 	// append metadata
 	Object.keys(data).forEach(function(name) {
 		args.push("-metadata");

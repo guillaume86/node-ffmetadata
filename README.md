@@ -92,6 +92,10 @@ The `options` object may be provided with any of the following fields:
    *would* have been used to invoke ffmpeg is returned synchronously.
    The `callback` argument is not used in this case.
 
+ * `options.strip`: If this property is truthy, the existing metadata
+   will be stripped from the file by passing the `-map_metadata -1`
+   arguments to `ffmpeg`.
+
 [pull8]: https://github.com/parshap/node-ffmetadata/pull/8
 
 `callback(err)` is called when finished, with an error if one occurred.
